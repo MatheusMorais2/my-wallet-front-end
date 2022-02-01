@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import React from "react";
 
+import Input from "../../styles/Input";
+
 export default function FormLogin() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
 
@@ -32,21 +34,6 @@ export default function FormLogin() {
 
 const Container = styled.div`
   width: 100%;
-  height: 58px;
-`;
-
-const Input = styled.input`
-  height: 58px;
-  background-color: #fff;
-  border-radius: 5px;
-  font-family: "Raleway";
-  color: #000;
-  font-size: 20px;
-  font-weight: 400;
-  padding: 0 15px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 13px;
 `;
 
 const Form = styled.form`
@@ -66,4 +53,6 @@ const Button = styled.button`
   justify-content: center;
   align-items: center;
   margin-bottom: 36px;
+  color: #fff;
+  height: 46px;
 `;

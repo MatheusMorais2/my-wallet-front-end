@@ -1,22 +1,21 @@
-import styled from "styled-components";
-/* import { Link } from "react-router-dom"; */
 import React from "react";
+import styled from "styled-components";
 
-import FormLogin from "./FormLogin";
 import Container from "../styles/Container";
 import Logo from "../styles/Logo";
+import FormSignup from "./FormSignup";
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <Container>
       <Logo />
-      <FormLogin />
-      <SignUp>Primeira vez? Cadastre-se!</SignUp>
+      <FormSignup />
+      <Login>Já tem uma conta? Entre agora!</Login>
     </Container>
   );
 }
 
-const SignUp = styled.div`
+const Login = styled.div`
   font-family: "Raleway";
   font-size: 15px;
   font-weight: 700;
