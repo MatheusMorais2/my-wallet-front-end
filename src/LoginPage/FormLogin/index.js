@@ -3,13 +3,21 @@ import { useState } from "react";
 import React from "react";
 
 import Input from "../../styles/Input";
+import LoadingButton from "../../styles/LoadingButton";
 
 export default function FormLogin() {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+
+  function login(e) {
+    e.preventDefault();
+    setLoading(true);
+    console.log("alou marilene?");
+  }
 
   return (
     <Container>
-      <Form>
+      <Form onSubmit={login}>
         <Input
           placeholder="E-mail"
           onChange={(e) =>
@@ -17,6 +25,7 @@ export default function FormLogin() {
           }
           value={loginData.email}
           type="email"
+          disabled={loading}
         />
         <Input
           placeholder="Senha"
@@ -25,8 +34,11 @@ export default function FormLogin() {
           }
           value={loginData.password}
           type="password"
+          disabled={loading}
         />
-        <Button type="submit">Entrar</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? <LoadingButton /> : "Entrar"}
+        </Button>
       </Form>
     </Container>
   );

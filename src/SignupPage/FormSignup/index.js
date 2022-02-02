@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 import Input from "../../styles/Input";
 import LoadingButton from "../../styles/LoadingButton";
@@ -16,6 +17,29 @@ export default function FormSignup() {
   function signUp(e) {
     e.preventDefault();
     setLoading(true);
+
+    if (signUpData.password !== signUpData.confirmPassword) {
+      alert("Senhas diferentes, tente novamente");
+      setLoading(false);
+      return;
+    }
+
+    const { email, name, password } = signUpData;
+    const promise = axios.post("localhost:5000/signup", {
+      email,
+      name,
+      password,
+    });
+
+    promise.then(() => {
+      console.log("deu bom no signup");
+    });
+
+    promise.catch((error) => {
+      console.log("erro ao cadastrar: ", error);
+      alert("Falha ao cadastrar");
+    });
+    setLoading(false);
   }
 
   return (
@@ -24,7 +48,7 @@ export default function FormSignup() {
         <Input
           placeholder="Nome"
           onChange={(e) =>
-            setSignUpData({ ...signUpData, email: e.target.name })
+            setSignUpData({ ...signUpData, name: e.target.value })
           }
           value={signUpData.name}
           type="text"
