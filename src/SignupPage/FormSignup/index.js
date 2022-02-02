@@ -25,7 +25,7 @@ export default function FormSignup() {
     }
 
     const { email, name, password } = signUpData;
-    const promise = axios.post("localhost:5000/signup", {
+    const promise = axios.post("http://localhost:5000/signup", {
       email,
       name,
       password,

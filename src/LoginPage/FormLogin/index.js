@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import React from "react";
+import axios from "axios";
 
 import Input from "../../styles/Input";
 import LoadingButton from "../../styles/LoadingButton";
@@ -12,7 +13,28 @@ export default function FormLogin() {
   function login(e) {
     e.preventDefault();
     setLoading(true);
-    console.log("alou marilene?");
+
+    const { email, password } = loginData;
+    if (!email || !password) {
+      alert("Alguma informacao esta faltando");
+      setLoading(false);
+      return;
+    }
+    console.log(loginData);
+    const promise = axios.post("http://localhost:5000/login", {
+      email,
+      password,
+    });
+
+    promise.then(() => {
+      console.log("deu bom no login");
+    });
+
+    promise.catch(() => {
+      alert("Email e/ou senha invalidos");
+      setLoginData({ email: "", password: "" });
+    });
+    setLoading(false);
   }
 
   return (
