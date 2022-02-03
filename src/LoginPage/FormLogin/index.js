@@ -1,14 +1,20 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import React from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
+import UserContext from "../../Contexts/userContext";
 
 import Input from "../../styles/Input";
 import LoadingButton from "../../styles/LoadingButton";
 
 export default function FormLogin() {
+  const navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
+
+  const { setUserData } = useContext(UserContext);
 
   function login(e) {
     e.preventDefault();
@@ -20,14 +26,15 @@ export default function FormLogin() {
       setLoading(false);
       return;
     }
-    console.log(loginData);
+
     const promise = axios.post("http://localhost:5000/login", {
       email,
       password,
     });
 
-    promise.then(() => {
-      console.log("deu bom no login");
+    promise.then((res) => {
+      setUserData({ ...res.data });
+      navigate("/main", { replace: true });
     });
 
     promise.catch(() => {
