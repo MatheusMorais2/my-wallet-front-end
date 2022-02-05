@@ -1,5 +1,5 @@
 import styled from "styled-components";
-/* import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 import React from "react";
 
 import FormLogin from "./FormLogin";
@@ -11,7 +11,9 @@ export default function LoginPage() {
     <Container>
       <Logo />
       <FormLogin />
-      <SignUp>Primeira vez? Cadastre-se!</SignUp>
+      <Link to="/signup">
+        <SignUp>Primeira vez? Cadastre-se!</SignUp>
+      </Link>
     </Container>
   );
 }

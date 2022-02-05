@@ -6,6 +6,7 @@ import UserContext from "../Contexts/userContext";
 import LoginPage from "../LoginPage";
 import SignupPage from "../SignupPage";
 import MainPage from "../MainPage";
+import TransactionPage from "../TransactionPage";
 
 export default function App() {
   const [userData, setUserData] = useState({ name: "", token: "" });
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/" element={<LoginPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
           <Route path="/main" element={<MainPage />}></Route>
+          <Route path="/transaction" element={<TransactionPage />}></Route>
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>
