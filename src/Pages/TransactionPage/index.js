@@ -3,10 +3,10 @@ import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import UserContext from "../Contexts/userContext";
+import UserContext from "../../Contexts/userContext";
 
-import Input from "../styles/Input";
-import Container from "../styles/Container";
+import Input from "../../styles/Input";
+import Container from "../../styles/Container";
 
 export default function TransactionPage() {
   const location = useLocation();
@@ -22,8 +22,6 @@ export default function TransactionPage() {
   let type = "";
   if (location.state.type === "deposit") type = "entrada";
   else type = "saída";
-
-  console.log("location prop: ", location.state.type);
 
   function submitTransaction(e) {
     e.preventDefault();

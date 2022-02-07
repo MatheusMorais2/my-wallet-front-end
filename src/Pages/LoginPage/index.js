@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import React from "react";
 
 import FormLogin from "./FormLogin";
-import Container from "../styles/Container";
-import Logo from "../styles/Logo";
+import Container from "../../styles/Container";
+import Logo from "../../styles/Logo";
 
 export default function LoginPage() {
   return (

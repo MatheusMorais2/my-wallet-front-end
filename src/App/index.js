@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import UserContext from "../Contexts/userContext";
 
-import LoginPage from "../LoginPage";
-import SignupPage from "../SignupPage";
-import MainPage from "../MainPage";
-import TransactionPage from "../TransactionPage";
+import LoginPage from "../Pages/LoginPage";
+import SignupPage from "../Pages/SignupPage";
+import MainPage from "../Pages/MainPage";
+import TransactionPage from "../Pages/TransactionPage";
 
 export default function App() {
   const [userData, setUserData] = useState({ name: "", token: "" });

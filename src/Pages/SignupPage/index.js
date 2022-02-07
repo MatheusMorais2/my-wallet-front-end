@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import Container from "../styles/Container";
-import Logo from "../styles/Logo";
+import Container from "../../styles/Container";
+import Logo from "../../styles/Logo";
 import FormSignup from "./FormSignup";
 
 export default function SignupPage() {

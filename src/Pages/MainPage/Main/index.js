@@ -2,7 +2,7 @@ import { React, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-import UserContext from "../../Contexts/userContext";
+import UserContext from "../../../Contexts/userContext";
 
 export default function Main() {
   const { userData } = useContext(UserContext);
@@ -34,8 +34,9 @@ export default function Main() {
     <Box>
       <Transactions>
         {extract.map((elem) => {
+          const random = Math.random();
           return (
-            <Transaction key={elem.value + elem.type + elem.date}>
+            <Transaction key={elem.value + elem.type + elem.date + random}>
               <Aux>
                 <Date>{elem.date}</Date>
                 <Description>{elem.description}</Description>

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { IoExitOutline } from "react-icons/io5";
-import UserContext from "../../Contexts/userContext";
+import UserContext from "../../../Contexts/userContext";
 
 export default function Header() {
   const { userData, setUserData } = useContext(UserContext);

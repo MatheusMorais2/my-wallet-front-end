@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 
-import Container from "../styles/Container";
+import Container from "../../styles/Container";
 import Header from "./Header";
 import Main from "./Main";
 

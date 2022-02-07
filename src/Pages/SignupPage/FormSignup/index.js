@@ -2,8 +2,8 @@ import { React, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 
-import Input from "../../styles/Input";
-import LoadingButton from "../../styles/LoadingButton";
+import Input from "../../../styles/Input";
+import LoadingButton from "../../../styles/LoadingButton";
 
 export default function FormSignup() {
   const [signUpData, setSignUpData] = useState({
