@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import Container from "../../styles/Container";
 import Logo from "../../styles/Logo";
@@ -10,7 +11,9 @@ export default function SignupPage() {
     <Container>
       <Logo />
       <FormSignup />
-      <Login>Já tem uma conta? Entre agora!</Login>
+      <Link to="/">
+        <Login>Já tem uma conta? Entre agora!</Login>
+      </Link>
     </Container>
   );
 }
