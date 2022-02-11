@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { React, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
@@ -25,7 +26,7 @@ export default function FormSignup() {
     }
 
     const { email, name, password } = signUpData;
-    const promise = axios.post("http://localhost:5000/signup", {
+    const promise = axios.post(process.env.REACT_APP_API + "/signup", {
       email,
       name,
       password,

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { React, useState, useContext } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -36,7 +37,7 @@ export default function TransactionPage() {
     const config = { Authorization: `Bearer ${userData.token}` };
 
     const promise = axios.post(
-      "http://localhost:5000/extract",
+      process.env.REACT_APP_API + "/extract",
       {
         ...transaction,
       },

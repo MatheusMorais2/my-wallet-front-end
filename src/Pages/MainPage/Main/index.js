@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { React, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
@@ -15,7 +16,7 @@ export default function Main() {
         Authorization: `Bearer ${userData.token}`,
       },
     };
-    const promise = axios.get("http://localhost:5000/extract", config);
+    const promise = axios.get(process.env.REACT_APP_API + "/extract", config);
 
     promise.then((res) => {
       setExtract(res.data);
